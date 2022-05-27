@@ -1,43 +1,50 @@
-import 'package:class_list/detail_screen.dart';
+import 'package:class_list/detail_page.dart';
+import 'package:class_list/list_model.dart';
 import 'package:flutter/material.dart';
 
-class Todo {
-  final String title;
-  final String description;
-  const Todo(this.title, this.description);
-}
-
 class HomePage extends StatelessWidget {
-  List<Todo> todos = List.generate(
-      20,
-      (index) => Todo('Todo $index',
-          'A description of what needs to be done for Todo $index'));
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Todo list'),
+        title: Text('Job Openings'),
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: todos.length,
+        itemCount: jobList.length,
         itemBuilder: (context, i) {
-          return ListTile(
-            title: Text(todos[i].title),
+          return InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailScreen(),
-                    settings: RouteSettings(
-                      arguments: todos[
-                          i], //homepage ko data detail screen ma pathauna arguments pass garna parxa
-                    ),
-                  ));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DetailPage()));
             },
+            child: Card(
+              elevation: 3.0,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(jobList[i].icon, size: 32),
+                    title: Text(jobList[i].title),
+                    subtitle: Text(jobList[i].subtitle),
+                    trailing: Icon(jobList[i].bookmark),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(jobList[i].jobPosition),
+                      Text(jobList[i].jobType),
+                      Text(jobList[i].salary),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           );
         },
+        itemExtent: 115,
+        padding: EdgeInsets.all(12),
       ),
     );
   }

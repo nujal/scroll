@@ -1,4 +1,4 @@
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -6,6 +6,7 @@ import 'bottom_part.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
+  static const String routeName = '/detail-page';
 
   @override
   Widget build(BuildContext context) {

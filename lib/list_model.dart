@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'detail/detail_page.dart';
+import 'detail/frontend_screen.dart';
+
 class ListModel {
   final IconData icon = Icons.shop;
   final String title;
@@ -9,55 +12,71 @@ class ListModel {
   final String jobPosition;
   final String jobType;
   final String salary;
-  const ListModel(
-      {required this.title,
-      required this.subtitle,
-      required this.jobPosition,
-      required this.jobType,
-      required this.salary});
+  final String routeName;
+  const ListModel({
+    required this.title,
+    required this.subtitle,
+    required this.jobPosition,
+    required this.jobType,
+    required this.salary,
+    required this.routeName,
+  });
 }
 
 List<ListModel> jobList = [
   const ListModel(
       title: 'UI/UX Designer',
-      subtitle: 'palpa*nepal',
+      subtitle: 'palpa • nepal',
       jobPosition: 'Designer',
       jobType: 'Onsite',
-      salary: '\$8k-10k'),
+      salary: '\$8k-10k',
+      routeName: '\hello'),
   const ListModel(
-      title: 'UX Designer',
-      subtitle: 'chitwan*nepal',
-      jobPosition: 'Designer',
-      jobType: 'remote',
-      salary: '\$8k-10k'),
+    title: 'UX Designer',
+    subtitle: 'chitwan • nepal',
+    jobPosition: 'Designer',
+    jobType: 'remote',
+    salary: '\$8k-10k',
+    routeName: '\hello',
+  ),
   const ListModel(
-      title: 'frontend',
-      subtitle: 'palpa*nepal',
-      jobPosition: 'Designer',
-      jobType: 'onsite',
-      salary: '\$8k-10k'),
+    title: 'frontend',
+    subtitle: 'palpa • nepal',
+    jobPosition: 'Designer',
+    jobType: 'onsite',
+    salary: '\$8k-10k',
+    routeName: FrontendScreen.routeName,
+  ),
   const ListModel(
-      title: 'backend ',
-      subtitle: 'rolpa*nepal',
-      jobPosition: 'backend',
-      jobType: 'remote',
-      salary: '\$8k-10k'),
+    title: 'backend ',
+    subtitle: 'rolpa • nepal',
+    jobPosition: 'backend',
+    jobType: 'remote',
+    salary: '\$8k-10k',
+    routeName: '\hello',
+  ),
   const ListModel(
-      title: 'UX Designer',
-      subtitle: 'palpa*nepal',
-      jobPosition: 'Designer',
-      jobType: 'onsite',
-      salary: '\$8k-10k'),
+    title: 'UX Designer',
+    subtitle: 'palpa • nepal',
+    jobPosition: 'Designer',
+    jobType: 'onsite',
+    salary: '\$8k-10k',
+    routeName: '\hello',
+  ),
   const ListModel(
-      title: 'UI/UX Designer',
-      subtitle: 'palpa*nepal',
-      jobPosition: 'Designer',
-      jobType: 'remote',
-      salary: '\$8k-10k'),
+    title: 'UI/UX Designer',
+    subtitle: 'palpa • nepal',
+    jobPosition: 'Designer',
+    jobType: 'remote',
+    salary: '\$8k-10k',
+    routeName: '\hello',
+  ),
   const ListModel(
-      title: 'UX Designer',
-      subtitle: 'palpa*nepal',
-      jobPosition: 'Designer',
-      jobType: 'remote',
-      salary: '\$8k-10k'),
+    title: 'UX Designer',
+    subtitle: 'palpa • nepal',
+    jobPosition: 'Designer',
+    jobType: 'remote',
+    salary: '\$8k-10k',
+    routeName: DetailPage.routeName,
+  ),
 ];

@@ -1,9 +1,10 @@
-import 'package:class_list/detail_page.dart';
+import 'package:class_list/detail/detail_page.dart';
 import 'package:class_list/list_model.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
+  static const routeName = '/home-page';
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,9 @@ class HomePage extends StatelessWidget {
         itemBuilder: (context, i) {
           return InkWell(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DetailPage()));
+              Navigator.pushNamed(context, jobList[i].routeName);
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => DetailPage()));
             },
             child: Card(
               elevation: 3.0,

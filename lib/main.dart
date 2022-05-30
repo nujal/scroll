@@ -1,4 +1,6 @@
 import 'package:class_list/home_page.dart';
+import 'package:class_list/list_model.dart';
+import 'package:class_list/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      onGenerateRoute: RouteHandler.generateRoute,
+      initialRoute: HomePage.routeName,
     );
   }
 }

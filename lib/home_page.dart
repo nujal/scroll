@@ -1,8 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:class_list/pages/1st.dart';
-import 'package:class_list/pages/2nd.dart';
-import 'package:class_list/pages/3rd.dart';
-import 'package:class_list/pages/4th.dart';
+import 'package:class_list/pages/search.dart';
+import 'package:class_list/pages/contacts.dart';
+import 'package:class_list/pages/settings.dart';
 import 'package:class_list/pages/job_opening.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,28 +16,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   PageController _pageController = new PageController();
   final List<Widget> _pages = const [
     FirstPage(),
     SecondPage(),
-    ThirdPage(),
-    FourthPage(),
     JobOpening(),
+    FourthPage(),
+    ThirdPage(),
   ];
 
   final items = <Widget>[
     Icon(Icons.home),
     Icon(Icons.search),
-    Icon(Icons.favorite),
-    Icon(Icons.settings),
     Icon(Icons.person),
+    Icon(Icons.settings),
+    Icon(Icons.contact_phone),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      // backgroundColor: Colors.amber,
       extendBody: true,
       // appBar: AppBar(
       //   title: Text('Yaj Tech'),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         animationCurve: Curves.easeOut,
-        animationDuration: const Duration(milliseconds: 400),
+        animationDuration: const Duration(milliseconds: 300),
         height: 70,
         index: _currentIndex,
         items: items,

@@ -37,6 +37,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   animated_bottom_navigation_bar: ^0.3.3
   curved_navigation_bar: ^1.0.3
+  settings_ui: ^2.0.2
 
 dev_dependencies:
   flutter_test:

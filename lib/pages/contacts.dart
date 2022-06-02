@@ -7,7 +7,7 @@ class ThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink[100],
-      body: Center(child: Text('favourites')),
+      body: Center(child: Text('Contacts')),
     );
   }
 }

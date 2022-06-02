@@ -11,6 +11,7 @@ class JobOpening extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Job Opening"),
+        backgroundColor: Colors.blue[300],
       ),
       body: ListView.builder(
         itemCount: jobList.length,
